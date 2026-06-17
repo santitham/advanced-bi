@@ -35,7 +35,7 @@
 # COMMAND ----------
 
 # Shared connection config — reused by every demo and lab cell.
-import json, random, time
+import json, random, time, os
 from dotenv import load_dotenv
 
 load_dotenv()

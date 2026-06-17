@@ -1,0 +1,3 @@
+BROKER = "pkc-4j8dq.southeastasia.azure.confluent.cloud:9092"
+KEY    = "FLZKQAS36LUMZB4W"
+SECRET = "cfltq+UgRJKiIc2wJ1aoTokSnwI2s3AEmtho9xd9l1vgKuq06H4Hwbt2S87V+2Rw"

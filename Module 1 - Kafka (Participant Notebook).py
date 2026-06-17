@@ -29,17 +29,19 @@
 
 # COMMAND ----------
 
-# MAGIC %pip install confluent-kafka
+# MAGIC %pip install confluent-kafka python-dotenv
 # MAGIC # %pip restarts the Python interpreter, so it MUST be the first cell you run.
 
 # COMMAND ----------
 
 # Shared connection config — reused by every demo and lab cell.
 import json, random, time
+from dotenv import load_dotenv
 
-BROKER = dbutils.secrets.get("kafka_demo", "bootstrap")
-KEY    = dbutils.secrets.get("kafka_demo", "api_key")
-SECRET = dbutils.secrets.get("kafka_demo", "api_secret")
+load_dotenv()
+BROKER = os.getenv("BROKER")
+KEY = os.getenv("KEY")
+SECRET = os.getenv("SECRET")
 
 common = {
     "bootstrap.servers": BROKER,

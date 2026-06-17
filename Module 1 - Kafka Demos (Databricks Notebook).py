@@ -29,17 +29,19 @@
 
 # COMMAND ----------
 
-# MAGIC %pip install confluent-kafka
+# MAGIC %pip install confluent-kafka python-dotenv
 # MAGIC # %pip restarts the Python interpreter, so it MUST be the first cell you run.
 
 # COMMAND ----------
 
 # Shared connection config — reused by every demo and lab cell.
-import json, random, time
+import json, random, time, os
+from dotenv import load_dotenv
 
-BROKER = "pkc-4j8dq.southeastasia.azure.confluent.cloud:9092"
-KEY    = "FLZKQAS36LUMZB4W"
-SECRET = "cfltq+UgRJKiIc2wJ1aoTokSnwI2s3AEmtho9xd9l1vgKuq06H4Hwbt2S87V+2Rw"
+load_dotenv()
+BROKER = os.getenv("BROKER")
+KEY = os.getenv("KEY")
+SECRET = os.getenv("SECRET")
 
 common = {
     "bootstrap.servers": BROKER,
